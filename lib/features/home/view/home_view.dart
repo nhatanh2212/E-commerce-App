@@ -1,9 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import '../../../core/init/navigation/navigation_service.dart';
 import '../../../product/component/text/subtitle1_text.dart';
 import '../../../core/base/view/base_view.dart';
 import '../../../product/component/card/special_icon_card.dart';
 import '../../../product/component/card/special_text_card.dart';
+import '../../map/GoogleMapsScreen.dart';
 import '../viewmodel/home_view_model.dart';
 import '../../../core/extensions/app_extensions.dart';
 import '../../../product/component/card/item_card.dart';
@@ -12,7 +14,8 @@ import '../../../product/component/image/responsive_image.dart';
 import '../../../product/component/text/bold_title.dart';
 import '../../../product/component/text/primary_bold_text.dart';
 import '../../../product/component/text/product_name.dart';
-import 'package:flutter/src/material/bottom_navigation_bar.dart';
+import 'package:google_maps_widget/google_maps_widget.dart';
+
 class HomeView extends StatelessWidget {
   static const path = '/home';
   const HomeView({Key? key}) : super(key: key);
@@ -30,30 +33,29 @@ class HomeView extends StatelessWidget {
               ? _loadingBar(context)
               : _products(context, viewModel);
           return Scaffold(
-              backgroundColor: context.groupedBackground,
-              appBar: _appBar(context, viewModel),
-              body: isLoading,
+            backgroundColor: context.groupedBackground,
+            appBar: _appBar(context, viewModel),
+            body: isLoading,
           );
         },
       );
 
   AppBar _appBar(BuildContext context, HomeViewModel viewModel) => AppBar(
-        backgroundColor: context.primaryColor,
-        automaticallyImplyLeading: false,
-        centerTitle: false,
-        title: _appBarTitle(context),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () => print('tap to open map'), 
-            icon:  Icon(
-                          Icons.location_on,
-                          color: Colors.red,
-                          size: 28.0,
+          backgroundColor: context.primaryColor,
+          automaticallyImplyLeading: false,
+          centerTitle: false,
+          title: _appBarTitle(context),
+          actions: <Widget>[
+            IconButton(
+              onPressed: ()  => NavigationService.pushNamed(GoogleMapsScreen.path),
+              icon: const Icon(
+                Icons.location_on,
+                color: Colors.red,
+                size: 28.0,
+              ),
             ),
-           ),
-           _totalMoney(context, viewModel),
-           ]
-      );
+            _totalMoney(context, viewModel),
+          ]);
 
   Text _appBarTitle(BuildContext context) => BoldTitle(
         data: 'Discover',
@@ -230,4 +232,3 @@ class HomeView extends StatelessWidget {
         ],
       );
 }
-
