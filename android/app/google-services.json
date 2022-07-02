@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "219133044189",
+    "project_id": "cs426-355016",
+    "storage_bucket": "cs426-355016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219133044189:android:96ebc52e63237fe662c234",
+        "android_client_info": {
+          "package_name": "fitus.apcs.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219133044189-0jnkmhjtdpd4h2vu95h52tqcdc7kvbg1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fitus.apcs.ecommerce",
+            "certificate_hash": "32775876593c70f86350bb6b124f61f3173fc2bf"
+          }
+        },
+        {
+          "client_id": "219133044189-76qf0m5ju18encmf3on1bpdjokld4hjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvOV9jkpIGqqzhNF3LTVEVqsER_tzJJls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219133044189-76qf0m5ju18encmf3on1bpdjokld4hjo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
